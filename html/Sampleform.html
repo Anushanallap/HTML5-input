@@ -80,7 +80,15 @@
 
             });
            
-            
+            const email = document.querySelector('#email');
+            const emailerror =document.querySelector('.email-error');
+            email.addEventListener('input',function(){
+                let nameRegex = RegExp('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$');
+                if(nameRegex.test(email.value))
+                emailerror.textContent = "";
+                else emailerror.textContent = "Email is Incorrect";
+             });
+             
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
             output.textContent = salary.value;
